@@ -1,0 +1,31 @@
+{
+  "events": [
+    {
+      "year": "2019 - 2021",
+      "title": "Woking College",
+      "description": "Began my studies at Woking College, studying Statistics, Computer Science, and Engineering BTEC. A few months later, COVID-19.",
+      "image": "/src/assets/1.jpg"
+    },
+    {
+      "year": "2021 - 2024",
+      "title": "University of Portsmouth",
+      "description": "Started my degree, BSc Software Engineering. I also joined the Archery and Rowing societies, but most importantly, learnt too much for my own good.",
+      "category": "development",
+      "image": "/src/assets/grad.jpg"
+    },
+    {
+      "year": "June 2024",
+      "title": "CMP Awards",
+      "description": "My team was shortlisted and nominated for a CMP award for our work with the DIO (Defence Infrastructure Organisation). It was an incredible experience to be recognised for our hard work and dedication to the project.",
+      "category": "https://www.linkedin.com/posts/common-mission-project-uk_cmpawards-leanstart-missiondrivenentrepreneurship-activity-7211354521543835651-pxbl?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD6_KIABmWtOUfl-LYtsHFSPGrrX0rvltts",
+      "image": "/src/assets/cmp.jpg"
+    },
+    {
+      "year": "July 2024",
+      "title": "Sainsburys",
+      "description": "Started working at my local Sainsburys as a temporary job whilst I worked on my own projects and figure out what was next.",
+      "category": "",
+      "image": "/src/assets/1.jpg"
+    }
+  ]
+}
