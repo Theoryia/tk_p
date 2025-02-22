@@ -23,7 +23,7 @@
       "techStack": ["NEXT.js", "Python", "PostgreSQL","Flask","Raspberry Pi","scikit-learn","TensorFlow","pandas"],
       "githubLink": "https://github.com/username/project1",
       "dateRange": "May 2024 - Present",
-      "gif": "/src/assets/timeguide.gif"
+      "gif": "/../../assets/timeguide.gif"
     },
     {
       "title": "Buckshot Roulette Assist",
@@ -32,7 +32,7 @@
       "techStack": ["Python"],
       "githubLink": "https://github.com/Theoryia/BuckshotR_App",
       "dateRange": "December 2024 - Present",
-      "gif": "/src/assets/buckshot.gif"
+      "gif": "../../assets/buckshot.gif"
     },
     {
       "title": "Sidewinder",
