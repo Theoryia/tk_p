@@ -1,6 +1,6 @@
 async function loadProjects() {
     try {
-        const response = await fetch('/src/app/data/projects.json');  // Updated path
+        const response = await fetch('../app/data/projects.json');  // Updated path
         const data = await response.json();
         renderProjects(data.projects);
     } catch (error) {
@@ -56,7 +56,7 @@ function renderProjects(projects) {
 
 async function loadTimeline() {
     try {
-        const response = await fetch('/src/app/data/timeline.json');
+        const response = await fetch('../app/data/timeline.json');  // Updated path
         const data = await response.json();
         renderTimeline(data.events);
     } catch (error) {
