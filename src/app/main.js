@@ -111,67 +111,73 @@ function renderTimeline(events) {
 function initCanvas() {
     const canvas = document.createElement('canvas');
     canvas.className = 'starfield';
+    document.body.appendChild(canvas);
     const ctx = canvas.getContext('2d');
     
-    function resizeCanvas() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight * 2;
-    }
-    
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
-    
-    const stars = Array(300).fill().map(() => ({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        size: Math.random() * 1.2 + 0.2,
-        speed: Math.random() * 0.3 + 0.1,
-        brightness: Math.random() * 0.3 + 0.5,
-        twinkleSpeed: Math.random() * 0.002 + 0.001,
-        glow: Math.random() * 1.2 + 0.3
+    // Create two sets of stars
+    const backgroundStars = Array(200).fill().map(() => ({
+        x: Math.random() * window.innerWidth,
+        y: Math.random() * window.innerHeight,
+        size: Math.random() * 1 + 0.1, // Smaller background stars
+        brightness: Math.random() * 0.3 + 0.3,
+        twinkleSpeed: Math.random() * 0.001 + 0.0005
     }));
-    
-    let scrollOffset = 0;
-    let lastTime = 0;
-    
-    function animate(currentTime) {
-        const deltaTime = currentTime - lastTime;
-        lastTime = currentTime;
-        
+
+    const parallaxStars = Array(100).fill().map(() => ({
+        x: Math.random() * window.innerWidth,
+        y: Math.random() * window.innerHeight,
+        size: Math.random() * 1.2 + 0.2,
+        speed: Math.random() * 0.15 + 0.05,
+        brightness: Math.random() * 0.3 + 0.5,
+        twinkleSpeed: Math.random() * 0.002 + 0.001
+    }));
+
+    function drawStars() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
+        const scrollY = window.scrollY;
         
-        stars.forEach(star => {
+        // Draw background stars (no parallax)
+        backgroundStars.forEach(star => {
+            star.brightness += star.twinkleSpeed;
+            if (star.brightness >= 0.6 || star.brightness <= 0.3) {
+                star.twinkleSpeed *= -1;
+            }
+            
+            ctx.globalAlpha = star.brightness;
+            ctx.fillStyle = 'white';
+            ctx.beginPath();
+            ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+            ctx.fill();
+        });
+
+        // Draw parallax stars
+        parallaxStars.forEach(star => {
             star.brightness += star.twinkleSpeed;
             if (star.brightness >= 0.8 || star.brightness <= 0.5) {
                 star.twinkleSpeed *= -1;
             }
             
-            const y = (star.y - scrollOffset * star.speed) % canvas.height;
+            let y = (star.y - (scrollY * star.speed)) % canvas.height;
+            if (y < 0) y += canvas.height;
             
-            // Draw base star with increased intensity
             ctx.globalAlpha = star.brightness;
-            ctx.fillStyle = `rgba(255, 255, 255, ${star.brightness})`;
+            ctx.fillStyle = 'white';
             ctx.beginPath();
             ctx.arc(star.x, y, star.size, 0, Math.PI * 2);
             ctx.fill();
-            
-            // Enhanced glow effect
-            ctx.globalAlpha = star.brightness * 0.5;
-            ctx.fillStyle = `rgba(255, 255, 255, ${star.brightness * 0.5})`;
-            ctx.beginPath();
-            ctx.arc(star.x, y, star.size + star.glow, 0, Math.PI * 2);
-            ctx.fill();
         });
-        
-        requestAnimationFrame(animate);
+
+        requestAnimationFrame(drawStars);
     }
-    
-    window.addEventListener('scroll', () => {
-        scrollOffset = window.scrollY;
-    });
-    
-    document.body.prepend(canvas);
-    requestAnimationFrame(animate);
+
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+    drawStars();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -198,12 +204,22 @@ let ticking = false;
 window.addEventListener('scroll', () => {
     if (!ticking) {
         window.requestAnimationFrame(() => {
+            const currentScrollY = window.scrollY;
             const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
+            
+            // Only apply hide/show behavior on mobile
+            if (window.innerWidth <= 768) {
+                // Add minimum scroll threshold
+                if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                    // Scrolling down - hide header
+                    header.classList.add('nav-hidden');
+                } else {
+                    // Scrolling up - show header
+                    header.classList.remove('nav-hidden');
+                }
             }
+            
+            lastScrollY = currentScrollY;
             ticking = false;
         });
         ticking = true;

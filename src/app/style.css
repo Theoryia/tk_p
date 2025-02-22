@@ -35,12 +35,11 @@ h1 {
 header {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
-    background-color: rgba(18, 18, 18, 0.8);
-    backdrop-filter: blur(8px);
     z-index: 1000;
-    height: var(--header-height);
-    transition: background-color 0.3s ease;
+    background: var(--bg-color);
+    transition: transform 0.3s ease;
 }
 
 header.scrolled {
@@ -105,7 +104,7 @@ header.hidden {
 
 /* Main Content */
 main {
-    margin-top: var(--header-height);
+    margin-top: var(--header-height); /* Add space for fixed header */
     min-height: calc(100vh - var(--header-height) - 100px);
     padding: 2rem;
 }
@@ -163,20 +162,454 @@ footer {
         padding: 0.4rem 0.8rem;
         font-size: 0.9rem;
     }
+
+    /* Header adjustments */
+    header {
+        padding: 0.5rem 0;
+    }
+
+    .nav-container {
+        padding: 0 1rem;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .nav-links {
+        display: none; /* Hide nav links on mobile */
+    }
+
+    /* Section spacing adjustments */
+    .section {
+        padding: 3rem 0; /* Reduced from 6rem */
+        min-height: auto; /* Remove minimum height constraint */
+    }
+
+    .container {
+        padding: 0 1rem; /* Reduced side padding */
+    }
+
+    /* Timeline adjustments */
+    .timeline-content {
+        width: calc(100% - 60px);
+        margin-left: 60px !important;
+    }
+
+    .timeline-wrapper::before {
+        left: 30px;
+    }
+
+    /* Projects grid adjustments */
+    .projects-grid {
+        gap: 1.5rem;
+    }
+
+    /* Gallery adjustments */
+    .gallery-grid {
+        gap: 1rem;
+    }
+
+    /* Contact section adjustments */
+    .social-links {
+        gap: 1.5rem;
+    }
+
+    /* General spacing adjustments */
+    h2 {
+        margin-bottom: 1.5rem;
+    }
+
+    /* Header fixes */
+    .logo {
+        font-size: 1.8rem;  /* Increased from 1.2rem */
+    }
+
+    .nav-container {
+        padding: 0 1.5rem;  /* Increased padding */
+        height: var(--header-height);
+    }
+
+    /* Timeline fixes */
+    .timeline-content {
+        width: calc(100% - 40px);  /* Increased width */
+        margin-left: 40px !important;
+        padding: 2rem 1.5rem;
+        min-height: 160px;  /* Increased minimum height */
+    }
+
+    .timeline-wrapper::before {
+        left: 20px;  /* Moved line closer to edge */
+    }
+
+    .timeline-year {
+        font-size: 0.9rem;  /* Slightly larger date */
+        padding: 0.4rem 0.8rem;
+    }
+
+    .timeline-title {
+        font-size: 1.1rem;
+        margin-top: 0.5rem;
+        padding-right: 80px;  /* Space for date */
+    }
+
+    .timeline-description {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    /* Section spacing fixes */
+    .section {
+        padding: 3rem 1rem;  /* Adjusted padding */
+    }
+
+    /* Show navigation elements */
+    .nav-links {
+        display: flex;  /* Show nav links */
+        gap: 1.25rem;
+        font-size: 0.9rem;
+    }
+
+    .nav-links a {
+        padding: 0.5rem 0;
+    }
+
+    /* Keep navigation visible */
+    .nav-links {
+        display: flex;
+        gap: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .logo {
+        font-size: 1.4rem;
+    }
+
+    /* Timeline mobile adjustments */
+    .timeline-wrapper::before {
+        display: none; /* Remove center line on mobile */
+    }
+    
+    .timeline-content {
+        width: 100%; /* Full width */
+        margin: 0 0 1.5rem 0 !important; /* Stack items vertically */
+        padding: 2rem 1.5rem;
+    }
+
+    .timeline-item {
+        padding: 1rem 0;
+    }
+
+    /* Adjust spacing */
+    .section {
+        padding: 2rem 0;
+    }
+
+    .nav-container {
+        padding: 0 1.5rem;
+        height: var(--header-height);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        font-size: 1.6rem;
+    }
+
+    /* Container spacing */
+    .container {
+        padding: 0 0.75rem;
+        width: 100%;
+    }
+
+    /* Timeline adjustments */
+    .timeline-content {
+        width: 92%;
+        margin: 0 auto 1.5rem auto !important;
+        padding: 1.75rem 1.25rem;
+    }
+
+    .timeline-title {
+        font-size: 1.1rem;
+        padding-right: 70px;
+    }
+
+    .timeline-description {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .timeline-year {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.6rem;
+    }
+
+    /* Project cards */
+    .projects-grid {
+        width: 92%;
+        margin: 0 auto;
+    }
+
+    .project-card {
+        padding: 1.25rem;
+    }
+
+    .tech-stack span {
+        font-size: 0.8rem;
+        padding: 0.2rem 0.6rem;
+    }
+
+    /* Section spacing */
+    .section {
+        padding: 2.5rem 0;
+    }
+
+    .projects-grid {
+        width: 96%;
+        margin: 0 auto;
+        gap: 1.5rem;
+    }
+
+    .project-card {
+        padding: 1.25rem;
+        min-height: auto;
+    }
+
+    .project-content {
+        padding: 0.75rem;
+    }
+
+    .project-content h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .project-content p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+
+    .tech-stack span {
+        font-size: 0.75rem;
+        padding: 0.2rem 0.5rem;
+    }
+
+    /* Center timeline on mobile */
+    .timeline-content {
+        width: 92%;
+        margin: 0 auto 1.5rem auto !important;
+    }
+
+    .timeline-wrapper {
+        padding: 1rem 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Fix main padding for mobile */
+    main {
+        padding: 0;
+        margin-top: var(--header-height);
+    }
+
+    /* Widen project cards and gallery */
+    .projects-grid,
+    .gallery-grid {
+        width: 100%;
+        padding: 0 0.5rem;
+        margin: 1rem auto;
+    }
+
+    /* Container adjustments */
+    .container {
+        padding: 0 0.5rem;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Reduce card padding and make them wider */
+    .project-card {
+        padding: 0.75rem;
+        margin: 0;
+    }
+
+    .project-content {
+        padding: 0.5rem;
+    }
+
+    /* Container adjustments */
+    .container {
+        padding: 0 0.25rem;
+        width: 100%;
+    }
+
+    /* Two column layout for cards */
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+        width: 100%;
+        padding: 0 0.5rem;
+    }
+
+    /* Adjust font sizes for two column layout */
+    .project-content h3 {
+        font-size: 0.95rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .project-content p {
+        font-size: 0.8rem;
+        line-height: 1.3;
+    }
+
+    .tech-stack span {
+        font-size: 0.7rem;
+        padding: 0.15rem 0.4rem;
+        margin: 0.15rem;
+    }
+
+    /* Reduce About section spacing */
+    #about.section {
+        padding: 1rem 0;
+        min-height: auto;
+    }
+
+    #about h2 {
+        margin-bottom: 1rem;
+        font-size: 1.75rem;
+    }
+
+    #about .container {
+        padding: 0 1rem;
+    }
+
+    .about-content {
+        margin-top: 1rem;
+    }
+
+    .timeline-wrapper {
+        padding-top: 1rem;
+    }
+
+    /* Adjust section spacing in general */
+    .section {
+        padding: 2rem 0;
+        min-height: auto;
+    }
+
+    /* General section spacing */
+    .section {
+        padding: 1rem 0;
+        min-height: auto;
+    }
+
+    /* Container padding */
+    .container {
+        padding: 0 0.75rem;
+    }
+
+    /* Heading adjustments */
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Gallery adjustments */
+    .gallery-grid {
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Contact section specific */
+    #contact.section {
+        padding: 1rem 0;
+    }
+
+    .social-links {
+        gap: 1.5rem;
+        margin: 0.5rem 0;
+    }
+
+    /* Footer adjustments */
+    footer {
+        padding: 0.75rem 0;
+        margin-top: 0.5rem;
+    }
+
+    /* Timeline spacing */
+    .timeline-wrapper {
+        padding: 0.5rem 0;
+    }
+
+    .timeline-content {
+        margin-bottom: 1rem !important;
+    }
+
+    /* Contact section adjustments for mobile */
+    #contact.section {
+        min-height: auto;
+        padding: 2rem 0;
+    }
+
+    /* Compact social links */
+    .social-links {
+        gap: 2rem;
+        margin: 0;
+        padding: 1rem 0;
+    }
+
+    /* Remove the sliding header behavior */
+    header {
+        transform: none !important; /* Override any transform */
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    header.hidden {
+        transform: none !important;
+    }
+
+    header.nav-hidden {
+        transform: translateY(-100%);
+    }
+
+    /* Adjust footer spacing */
+    footer {
+        padding: 1rem 0;
+        margin-top: 0;
+    }
 }
 
 @media (max-width: 480px) {
+    /* Delete or comment out these lines:
     .nav-links {
         display: none;
     }
-    
-    /* Add a mobile menu button here if needed */
+    */
     .projects-grid {
         grid-template-columns: 1fr;
     }
 
     .project-card {
         margin-bottom: 2rem;
+    }
+
+    .container {
+        padding: 0 0.75rem;
+    }
+
+    .section {
+        padding: 2rem 0;
+    }
+
+    .nav-links {
+        display: none;  /* Hide nav only on very small screens */
+    }
+
+    .logo {
+        font-size: 1.6rem;  /* Still keep logo readable */
     }
 }
 
@@ -193,7 +626,6 @@ footer {
     border-radius: 12px;
     padding: 1.5rem;
     transition: transform 0.3s ease;
-    backdrop-filter: blur(8px);
     width: 100%;
     position: relative;
     overflow: hidden;
@@ -235,8 +667,14 @@ footer {
 }
 
 .project-content h3 {
+    font-size: 1.2rem; /* Increased from 0.95rem */
+    margin-bottom: 0.75rem;
     color: var(--text-color);
-    margin-bottom: 1rem;
+}
+
+.project-content p {
+    font-size: 0.95rem; /* Increased from 0.8rem */
+    line-height: 1.4;
 }
 
 .tech-stack {
@@ -247,11 +685,12 @@ footer {
 }
 
 .tech-stack span {
+    font-size: 0.85rem; /* Increased from 0.7rem */
+    padding: 0.2rem 0.5rem;
+    margin: 0.2rem;
     background: var(--primary-color);
     color: var(--bg-color);
-    padding: 0.25rem 0.75rem;
     border-radius: 20px;
-    font-size: 0.875rem;
 }
 
 .project-links {
@@ -322,9 +761,9 @@ footer {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 200vh;
-    z-index: -2;  /* Changed from -1 to -2 to ensure it's behind everything */
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
     pointer-events: none;
     /* Add better text rendering */
     text-rendering: optimizeLegibility;
@@ -727,6 +1166,45 @@ html {
     .projects-grid {
         grid-template-columns: repeat(2, 1fr);
         max-width: 1200px;
+    }
+}
+
+/* Add this for desktop timeline */
+@media (min-width: 769px) {
+    .timeline-wrapper::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2px;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    .timeline-content {
+        width: 45%;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-content {
+        margin-right: 52%;
+    }
+
+    .timeline-item:nth-child(even) .timeline-content {
+        margin-left: 52%;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .project-content p {
+        font-size: 0.9rem;
+    }
+
+    .tech-stack span {
+        font-size: 0.8rem;
     }
 }
 

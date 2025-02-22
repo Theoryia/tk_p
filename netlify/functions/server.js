@@ -1,16 +1,16 @@
 const express = require('express');
-const serverless = require("serverless-http");
-
+const path = require('path');
 const app = express();
-const router = express.Router();
 
-app.use(express.json());
-app.use('/index', express.static(__dirname + '/src'));
+// Serve static files from public directory
+app.use(express.static('public'));
 
-router.get('/', (req, res) => {
-    res.sendFile(__dirname + '/src/index.html');
+// Serve your index.html for all routes
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
-app.use('/', router);
-
-module.exports.handler = serverless(app);
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
