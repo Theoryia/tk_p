@@ -41,6 +41,14 @@
       "techStack": ["Python", "Node.js", "Chrome Extension", "pandas", "Figma"],
       "githubLink": "",
       "dateRange": "February 2025 - Present"
+    },
+    {
+      "title": "SimulateBlackjack",
+      "image": "",
+      "description": "A Python application which simulates the game of Blackjack, providing insights into optimal strategies and expected outcomes.",
+      "techStack": ["Python", "Plotly","pandas"],
+      "githubLink": "https://github.com/Theoryia/blackjacksim",
+      "dateRange": "June 2024 - Present"
     }
   ]
 }
