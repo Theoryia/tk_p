@@ -8,6 +8,7 @@
     "buffer": "^5.7.1",
     "canvas": "^3.1.0",
     "chownr": "^1.1.4",
+    "d3": "^7.9.0",
     "decompress-response": "^6.0.0",
     "deep-extend": "^0.6.0",
     "detect-libc": "^2.0.3",

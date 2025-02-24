@@ -132,9 +132,8 @@ footer {
 }
 
 .social-links a {
+    font-size: 1.8rem; /* Increased from default */
     color: var(--text-color);
-    font-size: 1.5rem;
-    margin: 0 1rem;
     transition: color 0.3s ease;
 }
 
@@ -545,6 +544,10 @@ footer {
     .social-links {
         gap: 1.5rem;
         margin: 0.5rem 0;
+    }
+
+    .social-links a {
+        font-size: 1.5rem; /* Keep original size for mobile */
     }
 
     /* Footer adjustments */
