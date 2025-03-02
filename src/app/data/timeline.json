@@ -3,13 +3,13 @@
     {
       "year": "2019 - 2021",
       "title": "Woking College",
-      "description": "Began my studies at Woking College, studying Statistics, Computer Science, and Engineering BTEC. A few months later, COVID-19.",
+      "description": "Began my studies at Woking College, studying Statistics, Computer Science, and Engineering BTEC.",
       "image": "../../assets/1.jpg"
     },
     {
       "year": "2021 - 2024",
       "title": "University of Portsmouth",
-      "description": "Started my degree, BSc Software Engineering. I also joined the Archery and Rowing societies, but most importantly, learnt too much for my own good.",
+      "description": "Started my degree, BSc Software Engineering. I also joined the Archery and Rowing societies",
       "category": "development",
       "image": "../../assets/grad.jpg"
     },
