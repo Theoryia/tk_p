@@ -14,7 +14,8 @@
       "description": "A comparative mapping tool to evaluate aircraft range based on fuel capacity, wind conditions, and payload variations.",
       "techStack": ["Leaflet.js", "Node.js"],
       "githubLink": "https://github.com/Theoryia/AviationRange",
-      "dateRange": "July 2024 - Present"
+      "dateRange": "July 2024 - Present",
+      "gif": "../../assets/aircraft-range.gif"
     },
     {
       "title": "TimeGuide",

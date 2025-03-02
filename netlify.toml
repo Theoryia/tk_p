@@ -1,12 +1,21 @@
 [build]
   publish = "src"
-  functions = "netlify/functions"
 
-[functions]
-  directory = "netlify/functions"
-  node_bundler = "esbuild"
+# Remove these function configurations since you're not using serverless functions
+# [functions]
+#  directory = "netlify/functions"
+#  node_bundler = "esbuild"
 
+# Replace the current redirect with these:
+# First - Try to serve files directly
+[[redirects]]
+  from = "/assets/*"
+  to = "/assets/:splat"
+  status = 200
+
+# Second - Fallback to SPA routing
 [[redirects]]
   from = "/*"
-  to = "/.netlify/functions/server"
+  to = "/index.html"
   status = 200
+  force = false
