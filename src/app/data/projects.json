@@ -50,6 +50,33 @@
       "techStack": ["Python", "Plotly","pandas"],
       "githubLink": "https://github.com/Theoryia/blackjacksim",
       "dateRange": "June 2024 - Present"
+    },
+    {
+      "title": "Running Count",
+      "image": "",
+      "description": "An interactive web-based game designed to help players master card counting techniques in Blackjack.",
+      "techStack": ["Node.JS","HTML","CSS"],
+      "githubLink": "https://runningcount.netlify.app/",
+      "dateRange": "April 2025 - Present",
+      "gif": "../../assets/runningcount.gif"
+    },
+    {
+      "title": "SeaChange Dashboard",
+      "image": "",
+      "description": "A team project for HackPompey2025, this dashboard provides real-time data visualisation and analysis for pollution in the Portsmouth Port area.",
+      "techStack": ["Express.JS", "Leaflet","pandas","Node.JS","HTML","CSS","FastAPI"],
+      "githubLink": "https://github.com/runtime-terr0rs/hack-pompey-2025",
+      "dateRange": "March 2025",
+      "gif": "https://github.com/runtime-terr0rs/hack-pompey-2025/raw/main/example.png"
+    },
+    {
+      "title": "3 Card Poker Analysis",
+      "image": "",
+      "description": "A platform for learning Julia by simulating hands of 3-card poker and using χ2 tests to determine if online games are biased.",
+      "techStack": ["Julia","Plotly","pandas","MS Excel","seaborn"],
+      "githubLink": "",
+      "dateRange": "April 2025 - Present",
+      "gif": "../../assets/3card.png"
     }
   ]
 }

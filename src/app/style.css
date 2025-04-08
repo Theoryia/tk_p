@@ -128,17 +128,26 @@ footer {
 }
 
 .social-links {
-    margin-bottom: 1rem;
+    display: flex;
+    gap: 2.5rem; /* Increased spacing between icons */
+    margin: 1.5rem 0;
+    justify-content: center;
 }
 
 .social-links a {
-    font-size: 1.8rem; /* Increased from default */
+    font-size: 2rem;
     color: var(--text-color);
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none; /* Remove underline */
 }
 
 .social-links a:hover {
     color: var(--primary-color);
+    transform: translateY(-3px); /* Added subtle lift effect */
 }
 
 /* Responsive Design */
@@ -225,7 +234,13 @@ footer {
 
     /* Contact section adjustments */
     .social-links {
-        gap: 1.5rem;
+        gap: 2rem; /* Still generous spacing on mobile */
+    }
+    
+    .social-links a {
+        font-size: 1.7rem;
+        padding: 0.4rem;
+        text-decoration: none; /* Ensure consistency on mobile */
     }
 
     /* General spacing adjustments */
@@ -664,7 +679,8 @@ footer {
 }
 
 .project-card:hover::before {
-    opacity: 0.1;
+    opacity: 0.4;
+
 }
 
 .project-card:hover {
