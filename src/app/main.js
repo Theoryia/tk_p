@@ -37,17 +37,10 @@ function renderProjects(projects) {
             githubLink.href = project.githubLink;
         }
 
-        // Add gif background setup
+        // Set gif background immediately and always visible
         if (project.gif) {
             const projectCard = card.querySelector('.project-card');
-            
-            projectCard.addEventListener('mouseenter', () => {
-                projectCard.style.setProperty('--hover-gif', `url(${project.gif})`);
-            });
-            
-            projectCard.addEventListener('mouseleave', () => {
-                projectCard.style.removeProperty('--hover-gif');
-            });
+            projectCard.style.setProperty('--hover-gif', `url(${project.gif})`);
         }
         
         grid.appendChild(card);

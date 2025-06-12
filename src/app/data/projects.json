@@ -77,6 +77,22 @@
       "githubLink": "",
       "dateRange": "April 2025 - Present",
       "gif": "../../assets/3card.png"
-    }
+    },
+    {
+      "title": "Wordsearch Solver Script",
+      "image": "",
+      "description": "A Python script that returns words found within a grid.",
+      "techStack": ["Python"],
+      "githubLink": "https://github.com/Theoryia/WordFinderHelper",
+      "dateRange": "June 2025"
+      },
+      {
+      "title": "Wordle Solver Script",
+      "image": "",
+      "description": "Two scripts for assisting with the popular game Wordle, one for solving a wordle and another for finding the best starting word.",
+      "techStack": ["Python","Julia"],
+      "githubLink": "https://github.com/Theoryia/WordleCalculator",
+      "dateRange": "June 2025"
+      }
   ]
 }

@@ -673,14 +673,13 @@ footer {
     background-image: var(--hover-gif);
     background-size: cover;
     background-position: center;
-    opacity: 0;
+    opacity: 0.1; /* Slightly increased for better visibility */
     transition: opacity 0.3s ease;
     z-index: 0;
 }
 
 .project-card:hover::before {
-    opacity: 0.4;
-
+    opacity: 0.4; /* Increased opacity on hover */
 }
 
 .project-card:hover {
@@ -697,6 +696,24 @@ footer {
     padding: 1.5rem;
     position: relative;
     z-index: 1;
+    background: rgba(18, 18, 18, 0.15); /* More transparent - reduced from 0.3 */
+    backdrop-filter: blur(2px); /* Reduced blur for more transparency */
+    -webkit-backdrop-filter: blur(6px); /* Safari support */
+    border: 0px solid rgba(255, 255, 255, 0.08); /* More subtle border */
+    border-radius: 8px;
+}
+
+/* Optional: Add a subtle shadow for depth */
+.project-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.02); /* Reduced from 0.05 */
+    border-radius: 8px;
+    z-index: -1;
 }
 
 .project-content h3 {
